@@ -8,8 +8,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - '5434:5432'
-    volumes: 
+      - "5435:5432"
+    volumes:
       - pgdata:/var/lib/postgresql/data
   api:
     container_name: template_service_go_api

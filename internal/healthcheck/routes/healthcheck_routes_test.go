@@ -18,9 +18,9 @@ func TestAliveRoute(t *testing.T) {
 
 	healthcheckRoutes.RegisterRoutes(app, config)
 
-	t.Run("It should return status 200", func(t *testing.T) {
-		resp, err := app.Test(httptest.NewRequest("GET", "/alive", nil))
+	t.Run("it should return status OK (200)", func(t *testing.T) {
+		response, err := app.Test(httptest.NewRequest("GET", "/alive", nil))
 		assert.Nil(t, err, fmt.Sprintf("Expected no error, but got '%s'", err))
-		assert.Equal(t, fiber.StatusOK, resp.StatusCode, "Expected status code 200, but got %d", resp.StatusCode)
+		assert.Equal(t, fiber.StatusOK, response.StatusCode, "Error: %d", response.StatusCode)
 	})
 }
